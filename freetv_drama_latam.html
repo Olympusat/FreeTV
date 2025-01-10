@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redireccionando...</title>
+    <script>
+        function detectarSistemaOperativo() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            console.log("User-Agent: " + userAgent); // Registro para depuración
+
+            if (/huawei|honor/i.test(userAgent)) {
+                window.location.href = "https://appgallery.huawei.com/#/app/C102549981"; // Reemplaza con el ID de tu app en Huawei AppGallery
+            } else if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.ottoly.freetv&referrer=utm_source%3Dfreetv_drama%26utm_medium%3Dqr_code_android%26utm_campaign%3Dadslate%26utm_term%3Dlatam";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://freetv-ios-store.onelink.me/zYT7?af_xp=custom&pid=freetv_drama_latam&c=adslate&utm_medium=qr_code_ios&utm_term=latam";
+            } else {
+                window.location.href = "https://www.freetv.com";
+            }
+        }
+
+        detectarSistemaOperativo();
+    </script>
+</head>
+<body>
+    <p>Redireccionando...</p>
+</body>
+</html>
